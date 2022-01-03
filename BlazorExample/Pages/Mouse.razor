@@ -1,0 +1,15 @@
+﻿@page "/mouse"
+
+<h1>Mouse Cordinates</h1>
+
+<p>the mouse is at: <strong>@messageText</strong></p>
+
+@code{
+    private string messageText { get; set; }
+
+    private void ShowMessage(MouseEventArgs e)
+    {
+        messageText = $"The mouse is at coorinates: {e.ScreenX}:{e.ScreenY}";
+        StateHasChanged();
+    }
+}

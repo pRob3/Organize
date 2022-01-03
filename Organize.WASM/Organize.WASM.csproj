@@ -8,7 +8,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.12" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralUI\GeneralUI.csproj" />
+    <ProjectReference Include="..\Organize.Business\Organize.Business.csproj" />
+    <ProjectReference Include="..\Organize.DataAccess\Organize.DataAccess.csproj" />
+    <ProjectReference Include="..\Organize.Shared\Organize.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
