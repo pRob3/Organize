@@ -11,7 +11,7 @@ html, body {
 
 /* NAVBAR */
 .navbar{
-    background: #00B0F0;
+    background: lightblue;
     color:white;
 }
 
@@ -24,7 +24,8 @@ html, body {
 }
 
 .active-nav > button {
-    background: green;
+    background: #00B0F0;
+    color: white;
 }
 
 
