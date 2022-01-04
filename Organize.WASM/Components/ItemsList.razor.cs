@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Organize.Shared.Contracts;
 using Organize.Shared.Entites;
+using System;
 using System.Collections.ObjectModel;
+using System.Text.Json;
 
 namespace Organize.WASM.Components
 {
@@ -17,6 +19,9 @@ namespace Organize.WASM.Components
             base.OnInitialized();
 
             UserItems = CurrentUserService.CurrentUser.UserItems;
+
+            Console.WriteLine(UserItems.Count);
+            Console.WriteLine(JsonSerializer.Serialize(UserItems));
         }
     }
 }
