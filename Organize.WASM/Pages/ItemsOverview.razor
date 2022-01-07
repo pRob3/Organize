@@ -5,7 +5,11 @@
         <ItemsList></ItemsList>
     </div>
 
-    <div class="item-edit-container">
-        <ItemEdit></ItemEdit>
-    </div>
+
+    @if (ShowEdit)
+    {
+        <div class="item-edit-container">
+            <ItemEdit></ItemEdit>
+        </div>        
+    }
 </div>
