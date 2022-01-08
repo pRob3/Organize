@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Organize.Shared.Enums;
 using Organize.WASM.ItemEdit;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,14 @@ namespace Organize.WASM.Pages
 {
     public partial class ItemsOverview : ComponentBase
     {
-        [Inject]
-        private ItemEditService ItemEditService { get; set; }
+        //[Inject]
+        //private ItemEditService ItemEditService { get; set; }
+
+        [Parameter]
+        public string TypeString { get; set; }
+
+        [Parameter]
+        public int? Id { get; set; }
 
         private bool ShowEdit { get; set; }
 
@@ -19,7 +26,20 @@ namespace Organize.WASM.Pages
         {
             base.OnInitialized();
 
-            ItemEditService.EditItemChanged += HandleEditItemChanged;
+            //ItemEditService.EditItemChanged += HandleEditItemChanged;
+        }
+
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+            if(Id != null && Enum.TryParse(typeof(ItemTypeEnum), TypeString, out _))
+            {
+                ShowEdit = true;
+            }
+            else
+            {
+                ShowEdit = false;
+            }
         }
 
         private void HandleEditItemChanged(object sender, ItemEditEventArgs e)
